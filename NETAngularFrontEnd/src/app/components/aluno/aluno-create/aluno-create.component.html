@@ -1,0 +1,82 @@
+<mat-card>
+  <mat-card-title>Novo Aluno</mat-card-title>
+
+  <form [formGroup]="sampleForm">
+
+    <mat-form-field>
+      <mat-select required [(ngModel)]="objAluno.iCodEscola" name="objAluno.iCodEscola" formControlName="iCodEscolaForm" placeholder="Informe a Escola" >
+        <mat-option *ngFor="let item of EscolasArray"  [value]="item.iCodEscola">
+            {{item.sDescricao}}
+        </mat-option>      
+      </mat-select>
+      <mat-hint *ngIf="!fValid.iCodEscolaForm.touched">Selecione uma Escola para continuar</mat-hint>
+      <div *ngIf="!fValid.iCodEscolaForm.valid && fValid.iCodEscolaForm.touched">
+          <mat-error *ngIf="fValid.iCodEscolaForm.errors.required">Escola é obrigatorio</mat-error>
+      </div>      
+    </mat-form-field>
+
+    <mat-form-field>
+      <input required
+        formControlName="sNomeForm"
+        type="text"
+        placeholder="Nome do Aluno"
+        name="sNome"
+        matInput
+        [(ngModel)]="objAluno.sNome"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        formControlName="dNascimentoForm"
+        type="text"
+        placeholder="Data Nascimento"
+        name="dNascimento"
+        matInput
+        [(ngModel)]="objAluno.dNascimento"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input required
+        formControlName="sCPFForm"
+        type="text"
+        placeholder="CPF"
+        name="sCPF"
+        matInput
+        [(ngModel)]="objAluno.sCPF"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input required
+        formControlName="sEnderecoForm"
+        type="text"
+        placeholder="Endereço Completo"
+        name="sEndereco"
+        matInput
+        [(ngModel)]="objAluno.sEndereco"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input required
+        formControlName="sCelularForm"
+        type="text"
+        placeholder="Celular"
+        name="sCelular"
+        matInput
+        [(ngModel)]="objAluno.sCelular"
+      />
+    </mat-form-field>
+
+  </form>
+
+  <button type="submit" mat-raised-button color="primary" (click)="createAluno()" [disabled]="sampleForm.invalid">
+    Salvar
+  </button>
+
+  <button mat-raised-button (click)="cancel()">
+    Cancelar
+  </button>
+</mat-card>

@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #202020;
+}
+
+.header .logo {
+  max-height: 8rem;
+}
+
+.header .title-group i {
+  padding-right: 5px;
+}
+
+.svg_image {
+  content: url("src/assets/img/LogotipoAngularNET.svg");
+  width: 150px;
+  height: 60px;
+  margin-left: 1px;
+  margin-right: 0px;
+  margin-top: 5px;
+}
+.svg_imageAngular {
+  content: url("src/assets/img/LogotipoOutro.svg");
+  width: 150px;
+  height:150px;
+  margin-left: 0px;
+  margin-right: 60px;
+  margin-top: 5px;
+}

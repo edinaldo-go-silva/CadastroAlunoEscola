@@ -1,0 +1,48 @@
+<mat-card>
+  <mat-card-title>Alterar Aluno</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Nome do Aluno"
+        name="sNome"
+        matInput
+        [(ngModel)]="objAluno.sNome"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="CPF"
+        name="sCPF"
+        matInput
+        [(ngModel)]="objAluno.sCPF"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Endereço Completo"
+        name="sEndereco"
+        matInput
+        [(ngModel)]="objAluno.sEndereco"
+      />
+    </mat-form-field>    
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Celular"
+        name="sCelular"
+        matInput
+        [(ngModel)]="objAluno.sCelular"
+      />
+    </mat-form-field>       
+  </form>
+  <button mat-raised-button color="primary" (click)="updateAluno()">
+    Atualizar
+  </button>
+
+  <button mat-raised-button (click)="cancel()">
+    Cancelar
+  </button>
+</mat-card>
