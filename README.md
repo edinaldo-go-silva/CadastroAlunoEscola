@@ -1,23 +1,19 @@
-# Angular CRUD
-https://github.com/dantovsky/crud-angular-9
+# Frontend
 
-## Descrição
-
-Pequeno projeto feito durante os meus estudos de Angular. Neste site é possível realizar um CRUD de produto.
-
-## Tecnologia Utilizada
-
-O front-end foi implementado usando o framework [Angular](https://angular.io/).
-
-## Extensões e Bibliotecas Utilizadas
-
-Para construção de interfaces foi utlizado o [Angular Material](https://material.angular.io/).
-
-Para simular um back-end foi utilizado o [typicode/json-server](https://github.com/typicode/json-server).
-
-![alt text](img/Frontend.png)
+Neste Modelo temos:
+- Tela de Login (sem senha ou usuario)
+- Listagem de Alunos
+- Inclusao, alteração e exclusão de alunos
+- Inclusao, alteração e exclusão de escolas
 
 
-instalar os componentes com:
+Para executar o FRONT-END, desenvolvido em Angular 9, execute na pasta:
 npm install
-ng serve -o
+
+Para executar, depois da intalação:
+npm start
+
+
+
+# Backend
+Desenvolvido com .NET 6.0 e basta abrir o projeto no Visual Studio 2022 e compilar, depois executar
