@@ -21,3 +21,4 @@ Para simular um back-end foi utilizado o [typicode/json-server](https://github.c
 instalar os componentes com:
 npm install
 ng serve -o
+![DesafioAngular-Login](https://github.com/edinaldo-go-silva/CadastroAlunoEscola/assets/84786877/2cfc1126-8b71-4100-bc1a-ff1a4c929b4a)
