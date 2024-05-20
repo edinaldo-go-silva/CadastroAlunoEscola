@@ -1,27 +1,60 @@
 <mat-card>
   <mat-card-title>Alterar Aluno</mat-card-title>
-  <form>
+  <form [formGroup]="sampleFormUpdate">
+
+    <mat-form-field>
+      <mat-select required [(ngModel)]="objAluno.iCodEscola" name="objAluno.iCodEscola" formControlName="iCodEscolaForm" placeholder="Informe a Escola" >
+        <mat-option *ngFor="let item of EscolasArray"  [value]="item.iCodEscola">
+            {{item.sDescricao}}
+        </mat-option>      
+      </mat-select>
+      <mat-hint *ngIf="!fValid.iCodEscolaForm.touched">Selecione uma Escola para continuar</mat-hint>
+      <div *ngIf="!fValid.iCodEscolaForm.valid && fValid.iCodEscolaForm.touched">
+          <mat-error *ngIf="fValid.iCodEscolaForm.errors.required">Escola é obrigatorio</mat-error>
+      </div>      
+    </mat-form-field>
+    
+    
     <mat-form-field>
       <input
         type="text"
+        formControlName="sNomeForm"
         placeholder="Nome do Aluno"
         name="sNome"
         matInput
         [(ngModel)]="objAluno.sNome"
       />
     </mat-form-field>
+
+    <mat-form-field>
+      <input
+        formControlName="dNascimentoForm"
+        type="text"
+        mask="d0/M0/0000"
+        [showMaskTyped]="true"
+        placeholder="Data Nascimento"
+        name="dNascimento"
+        matInput
+        [(ngModel)]="objAluno.dNascimento"
+      />
+    </mat-form-field>
+
     <mat-form-field>
       <input
         type="text"
+        mask="000.000.000-00"        
+        formControlName="sCPFForm"
         placeholder="CPF"
         name="sCPF"
         matInput
         [(ngModel)]="objAluno.sCPF"
       />
     </mat-form-field>
+
     <mat-form-field>
       <input
         type="text"
+        formControlName="sEnderecoForm"
         placeholder="Endereço Completo"
         name="sEndereco"
         matInput
@@ -31,6 +64,8 @@
     <mat-form-field>
       <input
         type="text"
+        mask="(00) 0 0000-0000"
+        formControlName="sCelularForm"
         placeholder="Celular"
         name="sCelular"
         matInput
@@ -38,7 +73,7 @@
       />
     </mat-form-field>       
   </form>
-  <button mat-raised-button color="primary" (click)="updateAluno()">
+  <button mat-raised-button type="submit" color="primary" (click)="updateAluno()">
     Atualizar
   </button>
 

@@ -1,6 +1,6 @@
-﻿using NETAngularWebAPI;
+﻿using DexianWebAPI;
 
-namespace NETAngularWebAPI.Services
+namespace DexianWebAPI.Services
 {
     public interface IAlunoService
     {

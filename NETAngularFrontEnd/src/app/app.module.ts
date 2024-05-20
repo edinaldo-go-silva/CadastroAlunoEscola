@@ -37,7 +37,8 @@ import { EscolaCreateComponent  } from "./components/escola/escola-create/escola
 import { EscolaReadComponent    } from "./components/escola/escola-read/escola-read.component";
 import { EscolaUpdateComponent  } from './components/escola/escola-update/escola-update.component';
 import { EscolaDeleteComponent  } from './components/escola/escola-delete/escola-delete.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule    } from '@angular/forms';
+import { initialConfig, NgxMaskModule } from 'ngx-mask';
 
 registerLocaleData(localePt);
 
@@ -81,7 +82,20 @@ registerLocaleData(localePt);
     MatIconModule,
     MatMenuModule,
     ReactiveFormsModule,
-  ],
+    NgxMaskModule.forRoot({
+      ...initialConfig,
+      patterns: {
+        ...initialConfig.patterns,
+        // NOTE: optional letter
+        O: { pattern: new RegExp(/[a-zA-Z ]/), optional: true },
+        // NOTE: everything but ' and "
+        Q: { pattern: new RegExp(/[^'"]/) },
+        // NOTE: everything but ' and " and space
+        T: { pattern: new RegExp(/[^'" ]/) },
+        N: { pattern: new RegExp(/[1-9]/) }
+      }
+    }),    
+  ],  
   providers: [
     {
       provide: LOCALE_ID,

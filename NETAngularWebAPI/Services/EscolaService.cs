@@ -1,4 +1,4 @@
-﻿using NETAngularWebAPI;
+﻿using DexianWebAPI;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
@@ -6,7 +6,7 @@ using System.IO;
 using System.Reflection.Metadata;
 using System.Text.Json;
 
-namespace NETAngularWebAPI.Services
+namespace DexianWebAPI.Services
 {
 
     public class EscolaService : IEscolaService

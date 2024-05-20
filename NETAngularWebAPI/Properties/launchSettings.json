@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "NETAngularWebAPI": {
+    "DexianWebAPI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

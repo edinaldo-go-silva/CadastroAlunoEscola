@@ -1,7 +1,7 @@
-﻿using NETAngularWebAPI;
+﻿using DexianWebAPI;
 using System.Text.Json;
 
-namespace NETAngularWebAPI.Services
+namespace DexianWebAPI.Services
 {
     public interface IEscolaService
     {

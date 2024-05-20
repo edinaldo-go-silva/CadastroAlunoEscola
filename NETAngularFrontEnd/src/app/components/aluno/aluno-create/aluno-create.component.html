@@ -16,7 +16,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input required
+      <input required ngClass="editMaskDate"
         formControlName="sNomeForm"
         type="text"
         placeholder="Nome do Aluno"
@@ -30,6 +30,8 @@
       <input
         formControlName="dNascimentoForm"
         type="text"
+        mask="d0/M0/0000"
+        [showMaskTyped]="true"
         placeholder="Data Nascimento"
         name="dNascimento"
         matInput
@@ -41,6 +43,7 @@
       <input required
         formControlName="sCPFForm"
         type="text"
+        mask="000.000.000-00"
         placeholder="CPF"
         name="sCPF"
         matInput
@@ -49,7 +52,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input required
+      <input 
         formControlName="sEnderecoForm"
         type="text"
         placeholder="Endereço Completo"
@@ -59,10 +62,11 @@
       />
     </mat-form-field>
 
-    <mat-form-field>
-      <input required
+    <mat-form-field >
+      <input 
         formControlName="sCelularForm"
         type="text"
+        mask="(00) 0 0000-0000"
         placeholder="Celular"
         name="sCelular"
         matInput

@@ -5,7 +5,6 @@ import { EscolaService } from "../../escola/escola.service";
 import { Router } from "@angular/router";
 import { Aluno  } from "../aluno.model";
 import { Escola  } from "../../escola/escola.model";
-import { Observable } from "rxjs";
 
 @Component({
   selector: "app-aluno-create",
@@ -28,12 +27,11 @@ export class AlunoCreateComponent implements OnInit {
     sCPF: "",
     sCelular: "",
   };
-
-
-  
+ 
   EscolasArray: Escola[];
 
-  constructor(private alunoService: AlunoService, private escolaService: EscolaService, private router: Router) {}
+  constructor(private alunoService: AlunoService, 
+              private escolaService: EscolaService, private router: Router) {}
 
   ngOnInit(): void {
 
@@ -43,19 +41,28 @@ export class AlunoCreateComponent implements OnInit {
 
     this.sampleForm = new FormGroup({
       iCodEscolaForm : new FormControl(null, Validators.required),
-      dNascimentoForm: new FormControl(null, Validators.required),
+      dNascimentoForm: new FormControl(null),
       sNomeForm      : new FormControl(null, Validators.required),
-      sEnderecoForm  : new FormControl(null, Validators.required),
-      sCPFForm       : new FormControl(null, Validators.required),
-      sCelularForm   : new FormControl(null, Validators.required),
-    });    
+      sEnderecoForm  : new FormControl(null),
+      sCPFForm       : new FormControl(null),
+      sCelularForm   : new FormControl(null),
+    });       
 
   }
 
   get fValid() {
     return this.sampleForm.controls;
   }    
-
+  get cpf() {
+    return this.sampleForm.get('sCPFForm')!;
+   }
+  
+   get telefone() {
+    return this.sampleForm.get('sCelularForm')!;
+   }
+   get data() {
+    return this.sampleForm.get('dNascimentoForm')!;
+   }
 
 
 

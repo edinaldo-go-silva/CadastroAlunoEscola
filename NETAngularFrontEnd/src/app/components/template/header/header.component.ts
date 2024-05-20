@@ -4,6 +4,7 @@ import { HeaderService } from "./header.service";
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
+  template: `<span [innerHTML]="svgIcon"></span>`,
   styleUrls: ["./header.component.css"],
 })
 export class HeaderComponent implements OnInit {
